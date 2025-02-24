@@ -40,6 +40,20 @@
         filename: 'wazuh-indexer'
         update_cache: yes
 
+- name: Install OpenSSL
+  apt:
+    name: openssl
+    state: present
+  register: install
+  tags: install
+  
+- name: Install OpenSSL
+  apt:
+    name: openssl
+    state: present
+  register: install
+  tags: install
+  
 - name: Install Wazuh indexer
   apt:
     name: wazuh-indexer={{ indexer_version }}-1
@@ -47,9 +61,3 @@
   register: install
   tags: install
 
-- name: Install OpenSSL
-  apt:
-    name: openssl
-    state: present
-  register: install
-  tags: install
